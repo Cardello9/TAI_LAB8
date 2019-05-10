@@ -6,6 +6,8 @@ import {QuizComponent} from "./components/quiz/quiz.component";
 import {BlogComponent} from "./components/blog/blog.component";
 import {BlogItemDetailsComponent} from './components/blog-item-details/blog-item-details.component';
 import {BlogHomeComponent} from './blog-home/blog-home.component';
+import {LoginComponent} from './components/login/login.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -21,6 +23,10 @@ const routes: Routes = [
   },
   {
     path: 'blog', component: BlogHomeComponent,
+
+  },
+  {
+    path: 'login', component: LoginComponent,
 
   },
   {

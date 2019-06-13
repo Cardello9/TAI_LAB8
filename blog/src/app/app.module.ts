@@ -21,6 +21,9 @@ import { BlogHomeComponent } from './blog-home/blog-home.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { TextFormatDirective } from './directives/text-format.directive';
 import { SelectizeComponent } from './components/selectize/selectize.component';
+import { BlogCreateComponent } from './components/blog-create/blog-create.component';
+import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
+import { BlogItemTextTitleComponent } from './components/blog-item-text-title/blog-item-text-title.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { SelectizeComponent } from './components/selectize/selectize.component';
     BlogHomeComponent,
     FilterPipe,
     TextFormatDirective,
-    SelectizeComponent
+    SelectizeComponent,
+    BlogCreateComponent,
+    BlogDetailComponent,
+    BlogItemTextTitleComponent
   ],
   imports: [
     BrowserModule,

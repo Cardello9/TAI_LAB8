@@ -40,12 +40,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_quiz_quiz_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/quiz/quiz.component */ "./src/app/components/quiz/quiz.component.ts");
 /* harmony import */ var _components_blog_item_details_blog_item_details_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/blog-item-details/blog-item-details.component */ "./src/app/components/blog-item-details/blog-item-details.component.ts");
 /* harmony import */ var _blog_home_blog_home_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./blog-home/blog-home.component */ "./src/app/blog-home/blog-home.component.ts");
+/* harmony import */ var _components_blog_create_blog_create_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/blog-create/blog-create.component */ "./src/app/components/blog-create/blog-create.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -72,6 +74,10 @@ var routes = [
     {
         path: 'quiz',
         component: _components_quiz_quiz_component__WEBPACK_IMPORTED_MODULE_4__["QuizComponent"],
+    },
+    {
+        path: 'add-post',
+        component: _components_blog_create_blog_create_component__WEBPACK_IMPORTED_MODULE_7__["BlogCreateComponent"]
     }
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -180,12 +186,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./pipes/filter.pipe */ "./src/app/pipes/filter.pipe.ts");
 /* harmony import */ var _directives_text_format_directive__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./directives/text-format.directive */ "./src/app/directives/text-format.directive.ts");
 /* harmony import */ var _components_selectize_selectize_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/selectize/selectize.component */ "./src/app/components/selectize/selectize.component.ts");
+/* harmony import */ var _components_blog_create_blog_create_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/blog-create/blog-create.component */ "./src/app/components/blog-create/blog-create.component.ts");
+/* harmony import */ var _components_blog_detail_blog_detail_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/blog-detail/blog-detail.component */ "./src/app/components/blog-detail/blog-detail.component.ts");
+/* harmony import */ var _components_blog_item_text_title_blog_item_text_title_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/blog-item-text-title/blog-item-text-title.component */ "./src/app/components/blog-item-text-title/blog-item-text-title.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -229,7 +241,10 @@ var AppModule = /** @class */ (function () {
                 _blog_home_blog_home_component__WEBPACK_IMPORTED_MODULE_18__["BlogHomeComponent"],
                 _pipes_filter_pipe__WEBPACK_IMPORTED_MODULE_19__["FilterPipe"],
                 _directives_text_format_directive__WEBPACK_IMPORTED_MODULE_20__["TextFormatDirective"],
-                _components_selectize_selectize_component__WEBPACK_IMPORTED_MODULE_21__["SelectizeComponent"]
+                _components_selectize_selectize_component__WEBPACK_IMPORTED_MODULE_21__["SelectizeComponent"],
+                _components_blog_create_blog_create_component__WEBPACK_IMPORTED_MODULE_22__["BlogCreateComponent"],
+                _components_blog_detail_blog_detail_component__WEBPACK_IMPORTED_MODULE_23__["BlogDetailComponent"],
+                _components_blog_item_text_title_blog_item_text_title_component__WEBPACK_IMPORTED_MODULE_24__["BlogItemTextTitleComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -308,6 +323,161 @@ var BlogHomeComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], BlogHomeComponent);
     return BlogHomeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/blog-create/blog-create.component.css":
+/*!******************************************************************!*\
+  !*** ./src/app/components/blog-create/blog-create.component.css ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/blog-create/blog-create.component.html":
+/*!*******************************************************************!*\
+  !*** ./src/app/components/blog-create/blog-create.component.html ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"col-lg-9 col-md-9 col-sm-9\">\n  <h4>Dodaj post:</h4>\n  <form (ngSubmit)=\"submit()\">\n      \n      <div class=\"form-group\">\n          <label class=\"col-form-label\">Tytuł:</label>\n          <input name=\"title\" type=\"text\" class=\"form-control\" placeholder=\"Wprowadź tytuł\" [(ngModel)]=\"post.title\">\n      </div>\n      <div class=\"form-group\">\n          <label class=\"col-form-label\">Adres obrazu:</label>\n          <input name=\"url\" type=\"text\" class=\"form-control\" placeholder=\"URL\" [(ngModel)]=\"post.image\">\n      </div>\n\n      <!--\n      <div class=\"form-group\">\n          <label class=\"col-form-label\">Treść:</label>\n          <textarea name=\"content\" type=\"text\" class=\"form-control\" placeholder=\"Treść\" [(ngModel)]=\"post.text\" rows=\"10\"></textarea>\n      </div>\n-->\n      <div class=\"form-group button\">\n          <button type=\"submit\" class=\"btn btn-info\">Dodaj</button>\n      </div>\n  </form>\n</div>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/components/blog-create/blog-create.component.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/components/blog-create/blog-create.component.ts ***!
+  \*****************************************************************/
+/*! exports provided: BlogCreateComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BlogCreateComponent", function() { return BlogCreateComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/data.service */ "./src/app/services/data.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var BlogCreateComponent = /** @class */ (function () {
+    function BlogCreateComponent(dataService, router) {
+        this.dataService = dataService;
+        this.router = router;
+        this.post = {
+            image: '',
+            title: ''
+        };
+    }
+    BlogCreateComponent.prototype.ngOnInit = function () {
+    };
+    BlogCreateComponent.prototype.submit = function () {
+        var _this = this;
+        console.log(this.post.image + " " + this.post.title);
+        this.dataService.createOrUpdate(this.post).subscribe(function (f) {
+            _this.router.navigate(['/blog']);
+        });
+    };
+    BlogCreateComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-blog-create',
+            template: __webpack_require__(/*! ./blog-create.component.html */ "./src/app/components/blog-create/blog-create.component.html"),
+            styles: [__webpack_require__(/*! ./blog-create.component.css */ "./src/app/components/blog-create/blog-create.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+    ], BlogCreateComponent);
+    return BlogCreateComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/blog-detail/blog-detail.component.css":
+/*!******************************************************************!*\
+  !*** ./src/app/components/blog-detail/blog-detail.component.css ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/blog-detail/blog-detail.component.html":
+/*!*******************************************************************!*\
+  !*** ./src/app/components/blog-detail/blog-detail.component.html ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  blog-detail works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/blog-detail/blog-detail.component.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/components/blog-detail/blog-detail.component.ts ***!
+  \*****************************************************************/
+/*! exports provided: BlogDetailComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BlogDetailComponent", function() { return BlogDetailComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var BlogDetailComponent = /** @class */ (function () {
+    function BlogDetailComponent() {
+    }
+    BlogDetailComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], BlogDetailComponent.prototype, "image", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], BlogDetailComponent.prototype, "text", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Number)
+    ], BlogDetailComponent.prototype, "id", void 0);
+    BlogDetailComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-blog-detail',
+            template: __webpack_require__(/*! ./blog-detail.component.html */ "./src/app/components/blog-detail/blog-detail.component.html"),
+            styles: [__webpack_require__(/*! ./blog-detail.component.css */ "./src/app/components/blog-detail/blog-detail.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], BlogDetailComponent);
+    return BlogDetailComponent;
 }());
 
 
@@ -465,6 +635,69 @@ var BlogItemImageComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/blog-item-text-title/blog-item-text-title.component.css":
+/*!************************************************************************************!*\
+  !*** ./src/app/components/blog-item-text-title/blog-item-text-title.component.css ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/blog-item-text-title/blog-item-text-title.component.html":
+/*!*************************************************************************************!*\
+  !*** ./src/app/components/blog-item-text-title/blog-item-text-title.component.html ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"card-body\">\n    <p class=\"card-text\">\n    {{ text | summary:35 }}\n    </p>\n    <a [routerLink]=\"['/blog/detail/', id]\" class=\"btn btn-primary\">\n      Więcej\n     </a>\n    </div>"
+
+/***/ }),
+
+/***/ "./src/app/components/blog-item-text-title/blog-item-text-title.component.ts":
+/*!***********************************************************************************!*\
+  !*** ./src/app/components/blog-item-text-title/blog-item-text-title.component.ts ***!
+  \***********************************************************************************/
+/*! exports provided: BlogItemTextTitleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BlogItemTextTitleComponent", function() { return BlogItemTextTitleComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var BlogItemTextTitleComponent = /** @class */ (function () {
+    function BlogItemTextTitleComponent() {
+    }
+    BlogItemTextTitleComponent.prototype.ngOnInit = function () {
+    };
+    BlogItemTextTitleComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-blog-item-text-title',
+            template: __webpack_require__(/*! ./blog-item-text-title.component.html */ "./src/app/components/blog-item-text-title/blog-item-text-title.component.html"),
+            styles: [__webpack_require__(/*! ./blog-item-text-title.component.css */ "./src/app/components/blog-item-text-title/blog-item-text-title.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], BlogItemTextTitleComponent);
+    return BlogItemTextTitleComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/blog-item-text/blog-item-text.component.css":
 /*!************************************************************************!*\
   !*** ./src/app/components/blog-item-text/blog-item-text.component.css ***!
@@ -483,7 +716,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card-body\">\r\n<p class=\"card-text\">\r\n{{ text | summary:35 }}\r\n</p>\r\n<a [routerLink]=\"['/blog/detail/', id]\" class=\"btn btn-primary\">\r\n  Więcej\r\n </a>\r\n</div>"
+module.exports = "<div class=\"card-body\">\r\n<p class=\"card-text\">\r\n{{ title | summary:35 }}\r\n</p>\r\n<a [routerLink]=\"['/blog/detail/', id]\" class=\"btn btn-primary\">\r\n  Więcej\r\n </a>\r\n</div>"
 
 /***/ }),
 
@@ -516,7 +749,7 @@ var BlogItemTextComponent = /** @class */ (function () {
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
         __metadata("design:type", String)
-    ], BlogItemTextComponent.prototype, "text", void 0);
+    ], BlogItemTextComponent.prototype, "title", void 0);
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
         __metadata("design:type", Number)
@@ -554,7 +787,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<blog-item-image [image]=\"image\"></blog-item-image>\r\n<blog-item-text  [id]=\"id\" [text]=\"text\"></blog-item-text>"
+module.exports = "<blog-item-image [image]=\"image\"></blog-item-image>\r\n<blog-item-text  [id]=\"id\" [title]=\"title\"></blog-item-text>"
 
 /***/ }),
 
@@ -591,7 +824,7 @@ var BlogItemComponent = /** @class */ (function () {
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
         __metadata("design:type", String)
-    ], BlogItemComponent.prototype, "text", void 0);
+    ], BlogItemComponent.prototype, "title", void 0);
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
         __metadata("design:type", Number)
@@ -629,7 +862,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<selectize></selectize>\r\n<div *ngFor=\"let item of items$  | filter: filterText\">\r\n    <div class=\"card\" style=\"width: 72rem;\">\r\n      <blog-item [id]=\"item.id\" [image]=\"item.image\" [text]=\"item.title\">\r\n      </blog-item>\r\n  <br>\r\n  </div>\r\n  <br><br>\r\n </div>"
+module.exports = "<selectize></selectize>\r\n<div *ngFor=\"let item of items$  | filter: filterText\">\r\n    <div class=\"card\" style=\"width: 72rem;\">\r\n      <blog-item [id]=\"item.id\" [image]=\"item.image\" [title]=\"item.title\">\r\n      </blog-item>\r\n  <br>\r\n  </div>\r\n  <br><br>\r\n </div>\r\n <button [routerLink]=\"['/add-post']\" class=\"btn btn-primary\">dodaj post</button>"
 
 /***/ }),
 
@@ -666,6 +899,7 @@ var BlogComponent = /** @class */ (function () {
     BlogComponent.prototype.getAll = function () {
         var _this = this;
         this.service.getAll().subscribe(function (response) {
+            console.log(JSON.stringify(response));
             _this.items$ = response;
         });
     };
@@ -1180,7 +1414,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
-        this.url = 'http://localhost:8080';
+        this.url = 'http://localhost:3000';
     }
     /*
     getAll() {
@@ -1195,10 +1429,16 @@ var DataService = /** @class */ (function () {
         return this.http.post(this.url + '/api/posts/', data);
     };
     DataService.prototype.getAll = function () {
-        return this.http.get(this.url + "/api/posts");
+        return this.http.get(this.url + '/api/posts/');
     };
     DataService.prototype.getById = function (id) {
-        return this.http.get(this.url + "/api/posts/" + id);
+        return this.http.get(this.url + '/api/posts/' + id);
+    };
+    DataService.prototype.createPost = function (data) {
+        return this.http.post(this.url + "/api/posts", { data: JSON.stringify(data) });
+    };
+    DataService.prototype.createOrUpdate = function (post) {
+        return this.http.post(this.url + "/api/posts", post);
     };
     DataService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
@@ -1353,7 +1593,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\MaciejK\lab11\TAI_LAB8\blog\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\studia\tai\taiFin2\TAI_LAB8\blog\src\main.ts */"./src/main.ts");
 
 
 /***/ })

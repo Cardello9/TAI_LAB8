@@ -621,9 +621,9 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\MaciejK\lab11\TAI_LAB8\blog\node_modules\bootstrap\dist\css\bootstrap.css */"./node_modules/bootstrap/dist/css/bootstrap.css");
-__webpack_require__(/*! D:\MaciejK\lab11\TAI_LAB8\blog\node_modules\font-awesome\css\font-awesome.min.css */"./node_modules/font-awesome/css/font-awesome.min.css");
-module.exports = __webpack_require__(/*! D:\MaciejK\lab11\TAI_LAB8\blog\src\styles.css */"./src/styles.css");
+__webpack_require__(/*! C:\studia\tai\taiFin2\TAI_LAB8\blog\node_modules\bootstrap\dist\css\bootstrap.css */"./node_modules/bootstrap/dist/css/bootstrap.css");
+__webpack_require__(/*! C:\studia\tai\taiFin2\TAI_LAB8\blog\node_modules\font-awesome\css\font-awesome.min.css */"./node_modules/font-awesome/css/font-awesome.min.css");
+module.exports = __webpack_require__(/*! C:\studia\tai\taiFin2\TAI_LAB8\blog\src\styles.css */"./src/styles.css");
 
 
 /***/ })

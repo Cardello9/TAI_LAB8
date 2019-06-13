@@ -1,9 +1,10 @@
 <selectize></selectize>
 <div *ngFor="let item of items$  | filter: filterText">
     <div class="card" style="width: 72rem;">
-      <blog-item [id]="item.id" [image]="item.image" [text]="item.title">
+      <blog-item [id]="item.id" [image]="item.image" [title]="item.title">
       </blog-item>
   <br>
   </div>
   <br><br>
  </div>
+ <button [routerLink]="['/add-post']" class="btn btn-primary">dodaj post</button>
